@@ -1,0 +1,13 @@
+# Login Module Configuration
+
+login:
+  max_attempts: 5
+  lockout_duration_minutes: 15
+  password_policy:
+    min_length: 8
+    require_numbers: true
+    require_special_chars: true
+
+session:
+  timeout_minutes: 30
+  remember_me: true
