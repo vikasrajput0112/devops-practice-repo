@@ -1,4 +1,7 @@
 environment: development
+
 version: 1.1-beta
+
 debug: true
+
 feature: login-module
