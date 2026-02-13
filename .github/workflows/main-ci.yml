@@ -32,4 +32,4 @@ jobs:
           cat config.yaml
 
       - name: Success message
-        run: echo "Main branch pipeline completed successfully ✅"
+        run: echo "Main branch pipeline completed successfully "
