@@ -1,0 +1,35 @@
+name: CI Pipeline — Main Branch
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run application
+        run: |
+          echo "Running app.py from MAIN branch"
+          python app.py
+
+      - name: Show config
+        run: |
+          echo "Printing config.yaml"
+          cat config.yaml
+
+      - name: Success message
+        run: echo "Main branch pipeline completed successfully ✅"
