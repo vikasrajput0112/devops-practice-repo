@@ -1,8 +1,7 @@
-# DevOps Practice Repo
+# DevOps Practice Repo — Login Feature
 
-This repository is created for practicing GitHub workflows,
-branching strategies, and CI/CD pipelines.
+This branch is used to develop the login functionality.
 
-## Main Branch
+## Feature Branch
 
-This branch contains the stable version of the project.
+Contains experimental login module.
