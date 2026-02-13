@@ -1,15 +1,15 @@
-name: CI Pipeline — Feature Login Branch
+name: CI Pipeline — Main Branch
 
 on:
   push:
     branches:
-      - feature-login
+      - main
   pull_request:
     branches:
-      - feature-login
+      - main
 
 jobs:
-  build-and-test-login:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,10 +21,10 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Run login module
+      - name: Run application
         run: |
-          echo "Running login.py from FEATURE branch"
-          python login.py
+          echo "Running app.py from MAIN branch"
+          python app.py
 
       - name: Show config
         run: |
@@ -32,4 +32,4 @@ jobs:
           cat config.yaml
 
       - name: Success message
-        run: echo "Feature-login branch pipeline completed successfully 🚀"
+        run: echo "Main branch pipeline completed successfully ✅"
