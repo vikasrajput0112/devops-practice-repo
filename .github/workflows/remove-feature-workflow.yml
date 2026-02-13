@@ -1,0 +1,30 @@
+name: Remove Feature Branch Workflow After Merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cleanup-feature-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - name: Remove feature-login workflow if exists
+        run: |
+          if [ -f ".github/workflows/feature-login-ci.yml" ]; then
+            echo "Feature workflow found. Removing..."
+            rm .github/workflows/feature-login-ci.yml
+
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+
+            git add .
+            git commit -m "Auto-remove feature-login workflow after merge"
+            git push
+          else
+            echo "No feature workflow file found."
+          fi
